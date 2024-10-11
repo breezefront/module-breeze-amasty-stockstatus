@@ -16,6 +16,27 @@ and add the following line after it:
     this.nodes.spanElement = $(this.selectors.stock).first();
 ```
 
+Find the code:
+
+```js
+this.nodes.stockAlertElement = $('<div>', {
+    class: this.classes.stockAlert,
+    'data-amstock-js': 'alert',
+    title: $t('Subscribe to back in stock notification'),
+    rel: 'external'
+});
+```
+
+and replace it with:
+
+```js
+this.nodes.stockAlertElement = $('<div>')
+    .addClass(this.classes.stockAlert)
+    .attr('data-amstock-js', 'alert')
+    .attr('title', $t('Subscribe to back in stock notification'))
+    .attr('rel', 'external');
+```
+
 ## Installation
 
 ```bash
